@@ -1,9 +1,10 @@
+// pages/toybox/index.js
 import React from "react";
 import Link from "next/link";
-import Head from 'next/head';
+import Head from "next/head";
 
-import Layout from '../../components/layout';
-
+import Layout from "../../components/layout";
+import AccordionExpandIcon from "../../components/accordionExpandIcon.js";
 
 export default function FirstPost() {
   return (
@@ -11,15 +12,9 @@ export default function FirstPost() {
       <Head>
         <title>First Post</title>
       </Head>
-      <h1>First Post sss</h1>
-      <h2>
-        <Link href="/">
-          Back to home
-        </Link>               
-      </h2>
-      <h2><Link href="/toybox/test">
-       go test
-        </Link></h2>
+      <main>
+        <AccordionExpandIcon />     
+      </main>
     </Layout>
   );
 }

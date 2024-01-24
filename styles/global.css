@@ -1,32 +1,186 @@
-html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    Segoe UI,
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    Fira Sans,
-    Droid Sans,
-    Helvetica Neue,
-    sans-serif;
+  padding: 40px;
+	font-family: Sans-Serif;
+	text-align: center;
+	font-family: 'Arial', sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f5f5f5;
+  
+}
+
+header {
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	padding: 10px 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	/* position: fixed; */
+	top: 0;
+	z-index: 1000;
+	/* 使 header 在其他元素之上 */
+}
+
+main {
+  width: 100%;
+	max-width: 1200px;
+	margin: 20px auto;
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ 
+}
+
+footer {
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	padding: 10px;
+	/* position: fixed; */
+	bottom: 0;
+	width: 100%;
+}
+
+nav {
+	margin-top: 10px;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+  padding-inline-start: 20px;
+  flex-wrap: wrap;
+}
+
+li {
+	margin: 15px 15px 0 0;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	text-decoration: none;
+	color: #fff;
+	font-weight: bold;
+	font-size: 16px;
+	transition: color 0.3s ease;
+}
+a:hover {
+	color: #3498db;
+}
+
+
+/* 在螢幕寬度小於 767px 時進行調整 */
+@media (max-width: 767px) {
+	header {
+		padding: 10px;
+	}
+	ul {
+		flex-direction: column;
+		align-items: center;
+		margin: 0;
+	}
+	li {
+		margin: 0 0 10px 0;
+	}
+
+}
+
+/* 按鈕樣式 */
+button {
+	display: inline-block;
+	padding: 3px 10px;
+	margin-left: 5px;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	color: #fff;
+	background-color: #3498db;
+	border: 2px solid #3498db;
+	border-radius: 5px;
+	transition: background-color 0.3s ease;
+}
+
+/* 鼠標懸停時改變背景顏色 */
+button:hover {
+	background-color: #2980b9;
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+h1 {
+	margin-top: 0;
+	font-size: 22px;
+}
+h2 {
+	margin-top: 0;
+	font-size: 20px;
+}
+h3 {
+	margin-top: 0;
+	font-size: 18px;
+}
+h4 {
+	margin-top: 0;
+	font-size: 16px;
+}
+h5 {
+	margin-top: 0;
+	font-size: 14px;
+}
+h6 {
+	margin-top: 0;
+	font-size: 12px;
+}
+code {
+	font-size: 1.2em;
+}
+
+.square {
+	background: #ffffff;
+	border: 1px solid #999;
+	color: DodgerBlue;
+	float: left;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 34px;
+	height: 34px;
+	margin-right: -1px;
+	margin-top: -1px;
+	padding: 0;
+	text-align: center;
+	width: 34px;
+}
+.board-row:after {
+	clear: both;
+	content: "";
+	display: table;
+}
+.status {
+	margin-bottom: 10px;
+}
+.game {
+	display: flex;
+	flex-direction: row;
+}
+.game-info {
+	margin-left: 20px;
+}
+
+.set-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.set-text-align{
+  text-align: left;
 }

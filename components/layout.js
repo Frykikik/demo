@@ -1,72 +1,52 @@
+//components/layout.js
 import React from "react";
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
+import Footer from '../components/footer';
 
-const name = 'Your Name';
-export const SiteTitle = 'Next.js Sample Website';
+const name = `Frykikik's Website`;
+export const SiteTitle = `Frykikik's Website`;
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
-        <meta
-          property="og:image"
-          content={`https://og-image.vercel.app/${encodeURI(
-            SiteTitle,
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-        />
-        <meta name="og:title" content={SiteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
-      <header className={styles.header}>
-        {home ? (
-          <>
-            <Image
-              priority
-              src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt=""
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-          </>
-        ) : (
-          <>
+    <>
+     <header>      
+      <nav>
+      <h2 className={utilStyles.headingLg}>
             <Link href="/">
               <Image
                 priority
-                src="/images/profile.jpg"
+                src="/images/cat.jpg"
                 className={utilStyles.borderCircle}
                 height={108}
                 width={108}
                 alt=""
               />
             </Link>
-            <h2 className={utilStyles.headingLg}>
               <Link href="/">
                 <span className={utilStyles.colorInherit}>{name}</span>
               </Link>
             </h2>
-          </>
-        )}
+        <ul>
+          <li>
+            <Link href="/">Home</Link>
+          </li>
+          <li>
+            <Link href="/toybox">Toybox</Link>
+          </li>
+          <li>
+            <Link href="/toybox/about">About Me</Link>
+          </li>
+        </ul>
+      </nav>
       </header>
-      <main>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">
-            ← 回到首頁
-          </Link>
-        </div>
-      )}
-    </div>
+
+    {children}
+
+    <Footer />
+    </>
   );
 }
