@@ -1,8 +1,8 @@
 官網安裝node.js
 
-npx create-react-app my-react-app
+npx create-react-app my-demo-app
 
-cd my-test-app
+cd my-demo-app
 
 Install React 18
 
@@ -35,7 +35,7 @@ eslint --init
 eslint-plugin-react-hooks
 npm install eslint-plugin-react-hooks --save-dev
 
-cd my-test-app
+cd my-demo-app
 
 npm start
 
@@ -47,4 +47,5 @@ npx serve
 
 serve -s build
 
+跑next
 npm run dev

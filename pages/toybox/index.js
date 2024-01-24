@@ -1,11 +1,25 @@
 import React from "react";
+import Link from "next/link";
+import Head from 'next/head';
 
-const learnNext = () => {
+import Layout from '../../components/layout';
+
+
+export default function FirstPost() {
   return (
-    <>
-      <h1>Next.js!pages/toybox</h1>
-    </>
+    <Layout>
+      <Head>
+        <title>First Post</title>
+      </Head>
+      <h1>First Post sss</h1>
+      <h2>
+        <Link href="/">
+          Back to home
+        </Link>               
+      </h2>
+      <h2><Link href="/toybox/test">
+       go test
+        </Link></h2>
+    </Layout>
   );
-};
-
-export default learnNext;
+}
