@@ -17,4 +17,20 @@
 }
 
 
+.nav_ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+  padding-inline-start: 20px;
+  flex-wrap: wrap;
+}
 
+.nav_li {
+	margin: 15px 15px 0 0;
+}
+
+.nav_a {
+  font-size: 30px;
+}
