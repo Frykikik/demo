@@ -2,6 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import Head from "next/head";
+import Image from 'next/image';
 import Layout, { SiteTitle } from "../../components/layout";
 import utilStyles from "../../styles/utils.module.css";
 
@@ -16,12 +17,14 @@ export default function Home() {
         <section className={utilStyles.headingMd}>
           <p>[Demo]</p>
           <p>
-            (This is a sample website - you’ll be building a site like this on{" "}
-            <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+          <Image
+                priority
+                src="/images/fix.png"
+                height={108}
+                width={108}
+                alt=""
+              />
           </p>
-          <h2>
-            <Link href="/">Back to home</Link>
-          </h2>
         </section>
       </main>
     </Layout>
