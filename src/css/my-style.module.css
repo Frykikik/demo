@@ -1,0 +1,20 @@
+.bigblue {
+    color: DodgerBlue;
+    padding: 20px;
+    font-family: Sans-Serif;
+    text-align: center;
+  }
+
+  .lawnGreen {
+    color: LawnGreen;
+    padding: 20px;
+    font-family: Sans-Serif;
+    text-align: center;
+  }
+
+  /* p,H1{
+    color: DodgerBlue;
+    padding: 40px;
+    font-family: Sans-Serif;
+    text-align: center;
+  } */

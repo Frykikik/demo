@@ -1,0 +1,50 @@
+官網安裝node.js
+
+npx create-react-app my-react-app
+
+cd my-test-app
+
+Install React 18
+
+npm install next@latest react@latest react-dom@latest
+
+Open your package.json file and add the following scripts:
+{
+  "scripts": {
+    "dev": "next dev",
+  }
+}
+
+npm install --save next-images
+
+Install Sass 
+
+npm i sass
+
+ add Material UI to your project:
+
+npm install @mui/material @emotion/react @emotion/styled
+npm install @mui/icons-material
+
+use-immer
+npm install immer use-immer
+
+npm install eslint -g
+eslint --init
+
+eslint-plugin-react-hooks
+npm install eslint-plugin-react-hooks --save-dev
+
+cd my-test-app
+
+npm start
+
+npm run build
+
+Install serve
+
+npx serve
+
+serve -s build
+
+npm run dev

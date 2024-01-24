@@ -1,0 +1,27 @@
+$myColor: rgb(151, 202, 33);
+
+h2 {
+  color: $myColor;
+}
+
+/* 按鈕樣式 */
+button {
+  display: inline-block;
+  padding: 3px 10px;
+  margin-left: 5px; 
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff;
+  background-color: #3498db;
+  border: 2px solid #3498db;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* 鼠標懸停時改變背景顏色 */
+button:hover {
+  background-color: #2980b9;
+}
