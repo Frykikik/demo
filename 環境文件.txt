@@ -54,9 +54,6 @@ npm run dev
 新建資料夾
 git clone https://github.com/Frykikik/demo.git
 
-git config --global user.name "Frykikik"
-git config --global user.email frykikik@gmail.com
-
 npm install next@latest react@latest react-dom@latest
 npm install --save next-images
 npm i sass
