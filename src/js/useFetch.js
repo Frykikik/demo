@@ -15,6 +15,55 @@ axios.get('https://jsonplaceholder.typicode.com/todos')
 //     .then( (response) => console.log(response))
 //     .catch( (error) => console.log(error))
 
+
+export function AxiosPost() {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.post('https://jsonplaceholder.typicode.com/todos', { // 參數要用大括號包起來
+        firstName: 'Fred',
+        lastName: 'Flintstone'
+      });
+        setData(response.data);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);    
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error.message}</p>;
+  }
+
+  return (
+    <div>
+      {/* 使用從伺服器獲取的數據進行渲染 */}
+      {/* <p>Data: {JSONData}</p> */}
+      {data &&
+        data.map((item) => {
+          return <p key={item.id}>{`
+          aa id: ${item.id},
+          userId: ${item.userId},           
+          title: ${item.title},
+          completed: ${item.completed}`}</p>;
+        })}
+    </div>
+  );
+}
+
 export function AxiosGet() {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);

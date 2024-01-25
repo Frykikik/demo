@@ -50,6 +50,10 @@ serve -s build
 跑next
 npm run dev
 
+跑react
+ "start": "react-scripts start",
+ npm start
+
 
 新建資料夾
 git clone https://github.com/Frykikik/demo.git
