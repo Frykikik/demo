@@ -22,8 +22,9 @@ export default function Home() {
               <ul className={styles.about_ul}>
                 目前網站技術主要使用
                 <li className={styles.about_li}>
-                  Visual Studio Code + ESLint 做程式撰寫
+                  Visual Studio Code + ESLint 程式撰寫
                 </li>
+                <li className={styles.about_li}>React 為主要語言</li>
                 <li className={styles.about_li}>Bootstrap 5 CDN 調整版面</li>
                 <li className={styles.about_li}>next.js 作為換頁面router</li>
                 <li className={styles.about_li}>axio 做外部api存取 </li>
