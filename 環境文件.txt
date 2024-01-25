@@ -49,3 +49,20 @@ serve -s build
 
 跑next
 npm run dev
+
+
+新建資料夾
+git clone https://github.com/Frykikik/demo.git
+
+npm install next@latest react@latest react-dom@latest
+npm install --save next-images
+npm i sass
+npm install @mui/material @emotion/react @emotion/styled
+npm install @mui/icons-material
+npm install immer use-immer
+npm install eslint -g
+npm install eslint-plugin-react-hooks --save-dev
+
+
+
+
