@@ -35,6 +35,10 @@ export default function Home() {
         這裡主要用來做測試、演示、記錄學習成果
         </p>
 
+        <p className={styles.description}>
+        這網站還在施工中，離完成還有一段距離。
+        </p>
+
         <Image
                 priority
                 src="/images/fix.png"
