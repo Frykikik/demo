@@ -1,5 +1,5 @@
 //components/accordionExpandIcon.js
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,StrictMode} from "react";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -11,6 +11,10 @@ import OxGame from "./oxGame.js";
 import ShowProduct from "./product.js";
 import TaskApp from "./TaskApp.js";
 import Clock from "./Clock.js";
+import QATest,{SameStateTest} from "./QATest.js";
+import ReduceTaskApp from "./TestReduceTask.js";
+
+
 
 function Bar({ id, title, children }) {
   return (
@@ -51,6 +55,14 @@ export default function AccordionExpandIcon() {
         <Bar id={"panel3-header"} title={"Todo列表"}>
           <TaskApp />
         </Bar>
+        <Bar id={"panel4-header"} title={"問答測試"}>
+          <QATest />
+          <SameStateTest />
+        </Bar>
+        <Bar id={"panel5-header"} title={"TestReduse"}>
+        <StrictMode><ReduceTaskApp  /> </StrictMode>
+        </Bar>
+        
       </>
     )
   );

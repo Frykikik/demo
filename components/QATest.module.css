@@ -1,0 +1,7 @@
+.qaP { margin: 5px 0px; }
+.panel {
+  padding: 10px;
+  border: 1px solid #aaa;
+}
+
+.Error { color: red; }
