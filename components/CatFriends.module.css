@@ -1,0 +1,37 @@
+.nav {
+  text-align: center;
+}
+
+.button {
+  margin: .25rem;
+}
+
+.ul,
+.li {
+  list-style: none;
+  white-space: nowrap;
+}
+
+.li {
+  display: inline;
+  padding: 0.5rem;
+}
+
+.div {
+  width: 100%;
+  overflow: hidden;
+}
+.active {
+  background: rgba(0, 100, 150, 0.4);
+  border-color: aqua;
+}
+
+.img {
+  padding: 5px;
+  margin: -10px;
+  transition: background 0.2s linear;
+}
+
+.imgActive {
+  border: 10px solid #368bbd;
+}

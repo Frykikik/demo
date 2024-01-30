@@ -13,7 +13,7 @@ import TaskApp from "./TaskApp.js";
 import Clock from "./Clock.js";
 import QATest,{SameStateTest} from "./QATest.js";
 import ReduceTaskApp from "./TestReduceTask.js";
-
+import CatFriends from "./CatFriends.js";
 
 
 function Bar({ id, title, children }) {
@@ -61,6 +61,9 @@ export default function AccordionExpandIcon() {
         </Bar>
         <Bar id={"panel5-header"} title={"TestReduse"}>
         <StrictMode><ReduceTaskApp  /> </StrictMode>
+        </Bar>
+        <Bar id={"panel6-header"} title={"RefDOM"}>
+        <StrictMode><CatFriends  /> </StrictMode>
         </Bar>
         
       </>
