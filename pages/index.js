@@ -13,7 +13,7 @@ export default function Home() {
     <Layout>
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>{`Frykikik's 測試網站`}</title>
         <link rel="icon" href="/favicon.ico" />        
       </Head>
 

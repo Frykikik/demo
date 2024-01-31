@@ -26,11 +26,12 @@ export default function Home() {
                 </li>
                 <li className={styles.about_li}>React 為主要語言</li>
                 <li className={styles.about_li}>Bootstrap 5 CDN 調整版面</li>
-                <li className={styles.about_li}>next.js 作為換頁面router</li>
+                <li className={styles.about_li}>Material UI 做畫面美化</li>                
+                <li className={styles.about_li}>next.js 為換頁面router</li>
                 <li className={styles.about_li}>axio 做外部api存取 </li>
                 <li className={styles.about_li}>版本控管使用git github</li>
               </ul>
-
+            
               <div className="row">
                 <p className="col-sm-4"> </p>
                 <p className="col-sm-8">
