@@ -1,0 +1,77 @@
+[
+  {
+    "id": 1,
+    "img": "/images/product/apples-1506119_1280.jpg",
+    "title": "蘋果",
+    "desc": "一種水果，富含維生素、纖維，有多種品種，甜酸口感，廣泛用於飲食和烹飪。",
+    "price": 20,
+    "stock": 9,
+    "discount": true
+  },
+  {
+    "id": 2,
+    "img": "/images/product/bananas-1642706_1280.jpg",
+    "title": "香蕉",
+    "desc": "高營養水果，富含鉀、維生素C，易携帶，口感香甜，是廣受歡迎的健康食品。",
+    "price": 30,
+    "stock": 3
+  },
+  {
+    "id": 3,
+    "img": "/images/product/grapes-2032838_1280.jpg",
+    "title": "葡萄",
+    "desc": "小而甜的水果，有多種顏色和品種，可新鮮食用或製成葡萄酒，富含抗氧化劑。",
+    "price": 40,
+    "stock": 0
+  },
+  {
+    "id": 4,
+    "img": "/images/product/kiwi-1432088_1280.jpg",
+    "title": "奇異果",
+    "desc": "綠色水果，富含維生素C、膳食纖維，口感清新酸甜，有助於免疫系統和消化。",
+    "price": 25,
+    "stock": 5,
+    "discount": true
+  },
+  {
+    "id": 5,
+    "img": "/images/product/pineapple-636562_1280.jpg",
+    "title": "鳳梨",
+    "desc": "多汁的黃色水果，富含維生素C，具甜酸風味，適合生食或製作飲料和料理。",
+    "price": 200,
+    "stock": 9
+  },
+  {
+    "id": 6,
+    "img": "/images/product/strawberry-1330459_1280.jpg",
+    "title": "草莓",
+    "desc": "小型紅色水果，香甜多汁，富含維生素C，常用於生食、製作甜點和飲品。",
+    "price": 35,
+    "stock": 9
+  },
+  {
+    "id": 7,
+    "img": "/images/product/tomatoes-8181194_1280.webp",
+    "title": "番茄",
+    "desc": "紅色蔬果，富含維生素C、抗氧化劑，可生食或料理，是許多料理的基本成分之一。",
+    "price": 20,
+    "stock": 9,
+    "discount": true
+  },
+  {
+    "id": 8,
+    "img": "/images/product/watermelons-2636_1280.jpg",
+    "title": "西瓜",
+    "desc": "大型多水果，外皮綠，內部紅爽甜，富含水分、維生素C，夏季受歡迎的消暑水果。",
+    "price": 100,
+    "stock": 9
+  },
+  {
+    "id": 9,
+    "img": "/images/product/tangerines-1721633_1280.jpg",
+    "title": "橘子",
+    "desc": "小型柑橘類水果，橙色果皮易剝，味道甜香，富含維生素C，是冬季常見的水果之一。",
+    "price": 20,
+    "stock": 9
+  }
+]

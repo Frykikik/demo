@@ -25,6 +25,7 @@ npm i sass
 
 npm install @mui/material @emotion/react @emotion/styled
 npm install @mui/icons-material
+npm install --save material-ui-popup-state
 
 use-immer
 npm install immer use-immer
@@ -34,6 +35,13 @@ eslint --init
 
 eslint-plugin-react-hooks
 npm install eslint-plugin-react-hooks --save-dev
+
+react-slick
+npm install react-slick slick-carousel
+
+reactstrap
+npm install reactstrap react react-dom
+npm install --save reactstrap react-addons-transition-group react-addons-css-transition-group
 
 cd my-demo-app
 

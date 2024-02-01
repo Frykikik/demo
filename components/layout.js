@@ -6,6 +6,7 @@ import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import Footer from "../components/footer";
+import MenuPopupState from "./MenuItem.js";
 
 const name = `Frykikik's Website`;
 export const SiteTitle = `Frykikik's Website`;
@@ -38,11 +39,11 @@ export default function Layout({ children, home }) {
                   <Link className={styles.nav_a} href="/">Home</Link>
                 </li>
                 <li className={styles.nav_li}>
-                  <Link className={styles.nav_a} href="/toybox">Toybox</Link>
+                  <Link className={styles.nav_a} href="/toybox">測試區</Link>
                 </li>
                 <li className={styles.nav_li}>
-                  <Link className={styles.nav_a} href="/toybox/demo">Demo</Link>
-                </li>
+                  <Link className={styles.nav_a} href="/toybox/store">測試商店</Link>
+                </li>              
                 <li className={styles.nav_li}>
                   <Link className={styles.nav_a} href="/toybox/about">About</Link>
                 </li>
