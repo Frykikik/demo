@@ -1,5 +1,5 @@
 // pages/toybox/test.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
@@ -203,6 +203,11 @@ const StyledBadge = styled(MUIBadge)(({ theme }) => ({
 export default function Store() {
   const [showBuyCart, setShowBuyCart] = useState(false);
   const [Buycart, setBuycar] = useState([]);
+  const [domLoaded, setDomLoaded] = useState(false);
+
+  useEffect(() => {
+    setDomLoaded(true);
+  }, []);
 
   let totalAmount = 0;
 
@@ -250,13 +255,18 @@ export default function Store() {
       </Head>
 
       <main>
-        <Button color={Buycart.length ? "primary" : ""} onClick={CartToggle}>
+        <Button
+          color={Buycart.length ? "primary" : "success"}
+          onClick={CartToggle}
+        >
           購物車
-          <IconButton aria-label="cart">
-            <StyledBadge badgeContent={Buycart.length} color="secondary">
-              <ShoppingCartIcon />
-            </StyledBadge>
-          </IconButton>
+          {domLoaded && (
+            <IconButton aria-label="cart">
+              <StyledBadge badgeContent={Buycart.length} color="secondary">
+                <ShoppingCartIcon />
+              </StyledBadge>
+            </IconButton>
+          )}
           {/* <Badge>{Buycart.length}</Badge> */}
         </Button>
         <Container>
