@@ -169,7 +169,7 @@ function ListBuyCart({
         <Container>
           <Row>
             <Col xs="4">
-              <Button onClick={() => CleanCart()}>清空購物車</Button>
+              <Button color="warning" onClick={() => CleanCart()}>清空購物車</Button>
             </Col>
             <Col xs="4"></Col>
             <Col xs="4">
