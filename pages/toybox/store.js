@@ -12,7 +12,7 @@ import MUIBadge from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import ReactHtmlParser from 'react-html-parser';
+// import ReactHtmlParser from 'react-html-parser';
 import CarouselIMG,{ setIMGs } from '../../components/Carousel.js';
  
 import {
@@ -302,7 +302,7 @@ function ProductDetail({
             </Col>
           </Row>
           <div>
-          {product.detail?ReactHtmlParser(product.detail):product.desc}
+          {product.detail?product.detail:product.desc}
           </div>
         </Container>
       </ModalBody>
