@@ -61,15 +61,16 @@ function ProductItemCard({
         }}
       >
         <img
+          className="set_pointer"
           alt={title}
           src={img}
           onClick={() => ProductDetailToggle(product.id)}
         />
         <CardBody>
-          <CardTitle tag="h3" onClick={() => ProductDetailToggle(product.id)}>
+          <CardTitle   className="set_pointer" tag="h3" onClick={() => ProductDetailToggle(product.id)}>
             {title}
           </CardTitle>
-          <CardText onClick={() => ProductDetailToggle(product.id)}>
+          <CardText   className="set_pointer" onClick={() => ProductDetailToggle(product.id)}>
             {desc}
           </CardText>
           <Form>

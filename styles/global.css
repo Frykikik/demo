@@ -173,3 +173,7 @@ code {
 .set-text-align{
   text-align: left;
 }
+
+.set_pointer{
+	cursor: pointer;
+}
