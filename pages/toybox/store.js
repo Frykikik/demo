@@ -291,7 +291,7 @@ function ProductDetail({
                       </select>
                       <Button
                         color="primary"
-                        onClick={() => AddToCart(product, amount)}
+                        onClick={() => {AddToCart(product, amount);Toggle();}}
                       >
                         加入購物車
                       </Button>
