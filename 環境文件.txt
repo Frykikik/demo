@@ -43,6 +43,9 @@ reactstrap
 npm install reactstrap react react-dom
 npm install --save reactstrap react-addons-transition-group react-addons-css-transition-group
 
+react-html-parser
+npm install react-html-parser
+
 cd my-demo-app
 
 npm start

@@ -12,6 +12,9 @@ import MUIBadge from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import ReactHtmlParser from 'react-html-parser';
+import CarouselIMG,{ setIMGs } from '../../components/Carousel.js';
+ 
 import {
   Container,
   Row,
@@ -37,7 +40,7 @@ import {
   Alert,
 } from "reactstrap";
 
-function ProductCard({
+function ProductItemCard({
   product,
   img,
   title,
@@ -46,8 +49,9 @@ function ProductCard({
   desc,
   discount,
   addToCart,
+  ProductDetailToggle,
 }) {
-  const [amount, setAmount] = useImmer(1);
+  const [amount, setAmount] = useState(1);
   return (
     <Col xs="12" md="4">
       <Card
@@ -56,10 +60,18 @@ function ProductCard({
           width: "18rem",
         }}
       >
-        <img alt={title} src={img} />
+        <img
+          alt={title}
+          src={img}
+          onClick={() => ProductDetailToggle(product.id)}
+        />
         <CardBody>
-          <CardTitle tag="h3">{title}</CardTitle>
-          <CardText>{desc}</CardText>
+          <CardTitle tag="h3" onClick={() => ProductDetailToggle(product.id)}>
+            {title}
+          </CardTitle>
+          <CardText onClick={() => ProductDetailToggle(product.id)}>
+            {desc}
+          </CardText>
           <Form>
             <FormGroup>
               <Badge color={discount ? "danger" : "success"}>
@@ -94,6 +106,29 @@ function ProductCard({
         </CardBody>
       </Card>
     </Col>
+  );
+}
+
+function ProductCard({ AddToCart, ProductDetailToggle }) {
+  return (
+    <Container>
+      <Row>
+        {Products.map((product) => (
+          <ProductItemCard
+            key={product.id}
+            product={product}
+            img={product.img}
+            title={product.title}
+            price={product.price}
+            stock={product.stock}
+            desc={product.desc}
+            discount={product.discount}
+            addToCart={AddToCart}
+            ProductDetailToggle={ProductDetailToggle}
+          />
+        ))}
+      </Row>
+    </Container>
   );
 }
 
@@ -169,7 +204,9 @@ function ListBuyCart({
         <Container>
           <Row>
             <Col xs="4">
-              <Button color="warning" onClick={() => CleanCart()}>清空購物車</Button>
+              <Button color="warning" onClick={() => CleanCart()}>
+                清空購物車
+              </Button>
             </Col>
             <Col xs="4"></Col>
             <Col xs="4">
@@ -191,6 +228,89 @@ function ListBuyCart({
   );
 }
 
+function ProductDetail({
+  modal,
+  Toggle,
+  Buycart,
+  productId,
+  AddToCart,
+  ChangeCart,
+  DeleteCart,
+  CleanCart,
+  totalAmount,
+  CheckoutCart,
+}) {
+  const [amount, setAmount] = useState(1);
+  const findProduct = Products.filter((item) => item.id === productId);
+  let product;
+
+  if (findProduct.length !== 0) {
+    product = findProduct[0];
+    setIMGs(product.id,'Products');
+  }
+
+  return (
+    <Modal isOpen={modal} toggle={Toggle} size="xl">
+      <ModalHeader toggle={Toggle}>{product.title}</ModalHeader>
+      <ModalBody>
+        <Container>
+          <Row>
+            <Col xs="6">
+              {product.imgs?<CarouselIMG />:<img src={product.img} alt={product.title} width="100%" />}
+            </Col>
+            <Col xs="6">
+              <h1>{product.title}</h1>
+              <h3>{product.desc}</h3>
+              <h1>
+                {" "}
+                <Badge
+                  color={product.discount ? "danger" : "success"}
+                  size="xl"
+                >
+                  {product.discount ? "特價:" : "售價:"}
+                  {product.price}
+                </Badge>
+              </h1>
+              <Form>
+                <FormGroup>
+                  {` `}
+                  {product.stock === 0 ? (
+                    <Badge color="warning">售完</Badge>
+                  ) : (
+                    <>
+                      <select
+                        value={amount}
+                        onChange={(e) => setAmount(e.target.value)}
+                      >
+                        {Array.from({ length: product.stock }, (_, i) => (
+                          <>
+                            <option value={i + 1}>{i + 1}</option>
+                          </>
+                        ))}
+                      </select>
+                      <Button
+                        color="primary"
+                        onClick={() => AddToCart(product, amount)}
+                      >
+                        加入購物車
+                      </Button>
+                    </>
+                  )}
+                </FormGroup>
+              </Form>
+            </Col>
+          </Row>
+          <div>
+          {product.detail?ReactHtmlParser(product.detail):product.desc}
+          </div>
+        </Container>
+      </ModalBody>
+    </Modal>
+  );
+}
+
+
+
 const StyledBadge = styled(MUIBadge)(({ theme }) => ({
   "& .MuiBadge-badge": {
     right: -3,
@@ -201,9 +321,11 @@ const StyledBadge = styled(MUIBadge)(({ theme }) => ({
 }));
 
 export default function Store() {
-  const [showBuyCart, setShowBuyCart] = useState(false);
+  const [showBuyCartBlock, setShowBuyCartBlock] = useState(false);
+  const [showProductDetail, setShowProductDetail] = useState(false);
   const [Buycart, setBuycar] = useState([]);
   const [domLoaded, setDomLoaded] = useState(false);
+  const [productId, setProductId] = useState("");
 
   useEffect(() => {
     setDomLoaded(true);
@@ -215,8 +337,13 @@ export default function Store() {
     totalAmount += item.price * item.amount;
   });
 
-  function CartToggle() {
-    setShowBuyCart(!showBuyCart);
+  function ProductDetailToggle(pId) {
+    setShowProductDetail(!showProductDetail);
+    if (pId) setProductId(pId);
+  }
+
+  function BuyCartToggle() {
+    setShowBuyCartBlock(!showBuyCartBlock);
   }
 
   function AddToCart(product, stock) {
@@ -244,7 +371,7 @@ export default function Store() {
 
   function CheckoutCart(totalPrice) {
     alert(`此訂單總共花費${totalPrice}元！`);
-    CartToggle();
+    BuyCartToggle();
     setBuycar([]);
   }
 
@@ -257,7 +384,7 @@ export default function Store() {
       <main>
         <Button
           color={Buycart.length ? "primary" : "success"}
-          onClick={CartToggle}
+          onClick={BuyCartToggle}
         >
           購物車
           {domLoaded && (
@@ -269,27 +396,30 @@ export default function Store() {
           )}
           {/* <Badge>{Buycart.length}</Badge> */}
         </Button>
-        <Container>
-          <Row>
-            {Products.map((product) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-                img={product.img}
-                title={product.title}
-                price={product.price}
-                stock={product.stock}
-                desc={product.desc}
-                discount={product.discount}
-                addToCart={AddToCart}
-              />
-            ))}
-          </Row>
-        </Container>
+
+        <ProductCard
+          AddToCart={AddToCart}
+          ProductDetailToggle={ProductDetailToggle}
+        />
+
+        {showProductDetail && (
+          <ProductDetail
+            modal={showProductDetail}
+            Toggle={ProductDetailToggle}
+            Buycart={Buycart}
+            productId={productId}
+            AddToCart={AddToCart}
+            ChangeCart={ChangeCart}
+            DeleteCart={DeleteCart}
+            CleanCart={CleanCart}
+            totalAmount={totalAmount}
+            CheckoutCart={CheckoutCart}
+          />
+        )}
 
         <ListBuyCart
-          modal={showBuyCart}
-          Toggle={CartToggle}
+          modal={showBuyCartBlock}
+          Toggle={BuyCartToggle}
           Buycart={Buycart}
           ChangeCart={ChangeCart}
           DeleteCart={DeleteCart}
